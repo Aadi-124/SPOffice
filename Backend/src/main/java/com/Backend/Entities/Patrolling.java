@@ -16,7 +16,7 @@ public class Patrolling {
     @JoinColumn(name = "admin_id")
     private Admin admin;
 
-    @OneToMany(mappedBy = "pattroling", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "patrolling", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SubPatrolling> subPatrollings;
 
     public Admin getAdmin() {

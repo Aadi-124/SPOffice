@@ -18,8 +18,8 @@ public class Location {
     @JoinColumn(name = "sector_id")
     private Sector sector;
 
-    @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Police> polices;
+    // @OneToMany(mappedBy = "location", cascade = CascadeType.ALL, orphanRemoval = true)
+    // private Set<Police> polices;
 
     public String getEquipments() {
         return equipments;
@@ -37,12 +37,12 @@ public class Location {
         this.sector = sector;
     }
 
-    public Set<Police> getPolices() {
-        return polices;
-    }
+    // public Set<Police> getPolices() {
+    //     return polices;
+    // }
 
-    public void setPolices(Set<Police> polices) {
-        this.polices = polices;
-    }
+    // public void setPolices(Set<Police> polices) {
+    //     this.polices = polices;
+    // }
 
 }

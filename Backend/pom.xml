@@ -56,13 +56,20 @@
 		</dependency> -->
 		
 		<!-- MySQL JDBC Driver -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version>
 			<scope>runtime</scope>
-		</dependency> -->
+		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.2.12.Final</version>
+			<type>pom</type>
+		</dependency>
 
 
 		<dependency>
