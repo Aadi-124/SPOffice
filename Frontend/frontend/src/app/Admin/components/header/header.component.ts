@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderNavbarComponent } from './header-navbar/header-navbar.component';
 import { CommonModule, NgFor } from '@angular/common';
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [HeaderNavbarComponent, CommonModule, NgFor],
+  imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
