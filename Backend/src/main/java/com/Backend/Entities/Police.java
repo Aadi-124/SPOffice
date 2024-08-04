@@ -1,5 +1,7 @@
 package com.Backend.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -23,7 +25,16 @@ public class Police {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subadmin_id")
+    @JsonIgnore
     private Subadmin subadmin;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getFullname() {
         return fullname;
@@ -31,6 +42,22 @@ public class Police {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getDesignation() {
@@ -49,20 +76,6 @@ public class Police {
         this.subadmin = subadmin;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
 
 }

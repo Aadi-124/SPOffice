@@ -2,6 +2,8 @@ package com.Backend.Entities;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -26,10 +28,19 @@ public class Subadmin {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "admin_id")
+    @JsonIgnore
     private Admin admin;
 
     @OneToMany(mappedBy = "subadmin", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Police> polices;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -78,5 +89,6 @@ public class Subadmin {
     public void setPolices(Set<Police> polices) {
         this.polices = polices;
     }
+
 
 }
