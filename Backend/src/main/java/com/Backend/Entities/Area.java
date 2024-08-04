@@ -3,9 +3,13 @@ package com.Backend.Entities;
 import java.util.Set;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "areas")
+@Getter
+@Setter
 public class Area {
 
     @Id
@@ -18,23 +22,5 @@ public class Area {
 
     @OneToMany(mappedBy = "area", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Sector> sectors;
-
-    public SubPatrolling getSubPatrolling() {
-        return subPatrolling;
-    }
-
-    public void setSubPatrolling(SubPatrolling subPatrolling) {
-        this.subPatrolling = subPatrolling;
-    }
-
-    public Set<Sector> getSectors() {
-        return sectors;
-    }
-
-    public void setSectors(Set<Sector> sectors) {
-        this.sectors = sectors;
-    }
-
-    
 
 }

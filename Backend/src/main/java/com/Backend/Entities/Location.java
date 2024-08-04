@@ -3,10 +3,16 @@ package com.Backend.Entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "locations")
+@Getter
+@Setter
 public class Location {
 
     @Id
@@ -17,35 +23,12 @@ public class Location {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sector_id")
+    @JsonIgnore
     private Sector sector;
 
     @ElementCollection
     @CollectionTable(name = "policeAtLocation", joinColumns = @JoinColumn(name = "location_id"))
     @Column(name = "police")
     private Set<Police> polices = new HashSet<>();
-
-    public String getEquipments() {
-        return equipments;
-    }
-
-    public void setEquipments(String equipments) {
-        this.equipments = equipments;
-    }
-
-    public Sector getSector() {
-        return sector;
-    }
-
-    public void setSector(Sector sector) {
-        this.sector = sector;
-    }
-
-    public Set<Police> getPolices() {
-        return polices;
-    }
-
-    public void setPolices(Set<Police> polices) {
-        this.polices = polices;
-    }
 
 }
