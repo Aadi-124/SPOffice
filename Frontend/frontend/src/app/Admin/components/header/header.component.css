@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.header-container {
+    height: 60px;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(110, 172, 213);
+}
+
+.logo {
+    /* background-color: rgba(0, 0, 0, 0.616); */
+    height: 90%;
+    margin-left: 5%;
+    font-size: 24px;
+    align-content: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+}
+
+
+
