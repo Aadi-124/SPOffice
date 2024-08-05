@@ -2,36 +2,16 @@
 
 
 .footer-container {
-    font-family: "Nunito", sans-serif;
-    width: 100vw;
-    position: fixed;
-    bottom:0px;
+    position: absolute;
+    bottom:0;
+    width: 100%;
     background-color:rgb(110, 172, 213) ;
     color: aliceblue;
     text-align: center;
-    font-size: 12px;
-    font-weight: 300;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: start;
-}
-
-.logo, .footerBlock {
-    width: 20vw;
-    
-   
-}
-
-a {
-    text-decoration: none;
-    color: aliceblue;
 }
 
 .copyright {
-    margin-top: 10px;
-    width: 100vw;
     height: 20px;
-    font-size: 12px;
-
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
 }

@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon'
+import { jsPDF } from 'jspdf'
 
 
 @Component({
@@ -13,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon'
 export class HeaderComponent {
 
   showDialog: boolean = true;
+
 
   navElements = [
     { img: 'https://cdn-icons-png.flaticon.com/128/1946/1946488.png', title: 'Home', active: true },
@@ -27,7 +29,7 @@ export class HeaderComponent {
     if (window.innerWidth > 500) {
       this.showDialog = true;
     }
-    else{
+    else {
       this.showDialog = false;
     }
   }
