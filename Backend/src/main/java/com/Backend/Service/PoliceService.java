@@ -48,6 +48,7 @@ public class PoliceService {
             if (police.isPresent()) {
                 Police existingPolice = police.get();
                 existingPolice.setFullname(policeDetails.getFullname());
+                existingPolice.setPoliceId(policeDetails.getPoliceId());
                 existingPolice.setPhone(policeDetails.getPhone());
                 existingPolice.setEmail(policeDetails.getEmail());
                 existingPolice.setDesignation(policeDetails.getDesignation());

@@ -1,5 +1,6 @@
 package com.Backend.Entities;
 
+import java.util.Date;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -22,6 +23,12 @@ public class Patrolling {
     @JoinColumn(name = "admin_id")
     @JsonIgnore
     private Admin admin;
+
+    private Police head;
+
+    // add the timeline and details
+
+    private Date date;
 
     @OneToMany(mappedBy = "patrolling", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SubPatrolling> subPatrollings;

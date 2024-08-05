@@ -1,6 +1,7 @@
 package com.Backend.Entities;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -19,7 +20,15 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String equipments;
+    private String name;
+
+    private Police head;
+
+    private List<Police> malePolices;
+
+    private List<Police> femalePolices;
+
+    private List<String> equipments;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sector_id")
