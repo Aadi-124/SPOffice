@@ -1,65 +1,48 @@
 package com.Backend.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
+import com.Backend.Entities.Patrolling;
+import com.Backend.Repository.PatrollingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.Backend.Entities.Patrolling;
-import com.Backend.Repository.PatrollingRepository;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PatrollingService {
 
-    private final PatrollingRepository patrollingRepository;
-
     @Autowired
-    public PatrollingService(PatrollingRepository patrollingRepository){
-        this.patrollingRepository = patrollingRepository;
-    }
+    private PatrollingRepository patrollingRepository;
 
-    public List<Patrolling> getAllPatrollings(){
-        try {
-            return patrollingRepository.findAll();
-        } catch (DataAccessException e) {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
+    public List<Patrolling> getAllPatrollings() {
+        return patrollingRepository.findAll();
     }
 
     public Optional<Patrolling> getPatrollingById(Long id) {
-        try {
-            return patrollingRepository.findById(id);
-        } catch (DataAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return patrollingRepository.findById(id);
     }
 
     public Patrolling createPatrolling(Patrolling patrolling) {
-        try {
-            return patrollingRepository.save(patrolling);
-        } catch (DataAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return patrollingRepository.save(patrolling);
     }
 
     public Patrolling updatePatrolling(Long id, Patrolling updatedPatrolling) {
         try {
             return patrollingRepository.findById(id)
-                .map(patrolling -> {
-                    return patrollingRepository.save(patrolling);
-                })
-                .orElseGet(() -> {
-                    updatedPatrolling.setId(id);
-                    return patrollingRepository.save(updatedPatrolling);
-                });
+                    .map(existingPatrolling -> {
+                        existingPatrolling.setAdmin(updatedPatrolling.getAdmin());
+                        existingPatrolling.setHead(updatedPatrolling.getHead());
+                        existingPatrolling.setDate(updatedPatrolling.getDate());
+                        existingPatrolling.setSubPatrollings(updatedPatrolling.getSubPatrollings());
+                        return patrollingRepository.save(existingPatrolling);
+                    })
+                    .orElseGet(() -> {
+                        updatedPatrolling.setId(id);
+                        return patrollingRepository.save(updatedPatrolling);
+                    });
         } catch (DataAccessException e) {
-            throw new RuntimeException("Failed to update patrolling", e);
+            throw new RuntimeException("Failed to update Patrolling", e);
         }
     }
 
@@ -68,8 +51,7 @@ public class PatrollingService {
             patrollingRepository.deleteById(id);
             return true;
         } catch (DataAccessException e) {
-            throw new RuntimeException("Failed to delete patrolling", e);
+            throw new RuntimeException("Failed to delete Patrolling", e);
         }
     }
-
 }

@@ -19,6 +19,8 @@ public class Police {
     @Column(nullable = false)
     private String fullname;
 
+    private Long policeId;
+
     @Column(nullable = false)
     private String phone;
 

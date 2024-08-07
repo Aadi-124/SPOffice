@@ -16,6 +16,10 @@ public class Area {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String areaName;
+
+    private Police head;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subPatrolling_id")
     private SubPatrolling subPatrolling;
