@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.header-container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6eacd5;
+    padding: 0 15px;
+}
+
+.nav-elements {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle-btn{
+    cursor: pointer;
+    background-color: rgb(216, 230, 247);
+    display: none;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logo {
+    font-size: 20px;
+    align-content: center;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+}
+
+
+.nav-element {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 8px;
+    gap: 10px;
+    transition: all 0.1s linear;
+}
+
+.nav-element:hover {
+    background-color: #ffffff28;
+}
+
+.nav-element img {
+    width: 20px;
+}
+
+.active {
+    background-color: rgb(168, 209, 237);
+}
+
+.active:hover {
+    background-color: rgb(168, 209, 237);
+    z-index: 10;
+}
+
+
+@media (max-width: 768px) {
+    .nav-element {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .toggle-btn{
+        display: grid;
+     }
+     .nav-elements{
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        max-width: 300px;
+        flex-direction: column;
+        background-color: rgb(110, 172, 213);
+        box-shadow: 0 0 10px gray;
+        border-radius: 8px;
+     }
+     .nav-element{
+        width: 100%;
+        padding: 10px 0;
+        flex-direction: row;
+        justify-content: space-around;
+     }
+  }

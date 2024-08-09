@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+.footer-container {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    background-color:rgb(110, 172, 213) ;
+    color: aliceblue;
+    text-align: center;
+}
+
+.copyright {
+    height: 20px;
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+}
